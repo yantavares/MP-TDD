@@ -31,3 +31,12 @@ def test4():  # 2 damas na mesma coluna
                  "01000000", "00001000"])
 
     assert t4.solve() == -1
+
+
+def test5():  # 2 damas na mesma linha
+    t5 = Queens(["10000001", "00000000",
+                 "01000000", "00000100",
+                 "00100000", "00000010",
+                 "00010000", "00000001"])
+
+    assert t5.solve() == -1

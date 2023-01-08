@@ -12,6 +12,12 @@ class Queens:
                 return -1
         return 1
 
+    def checkRows(self):  # Checa se há mais de 1 dama por linha
+        for i in self.board:
+            if i.count("1") > 1:
+                return -1
+        return 1
+
     def solve(self):
         countQueens = 0
         countSize = 0
@@ -22,5 +28,5 @@ class Queens:
             countSize += 1
         if countQueens != 8 or countSize != 8:
             return -1
-        if self.checkColumn() == -1:
+        if self.checkColumn() == -1 or self.checkRows() == -1:
             return -1
