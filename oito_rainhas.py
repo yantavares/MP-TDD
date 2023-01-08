@@ -60,11 +60,20 @@ class Queens:
             return -1
         return self.checkAll()
 
+
+if __name__ == '__main__':
     def makeBoard():
         board = []
         try:
             for i in range(8):
-                i = input()
-                board.append(i)
+                b = input()
+                board.append(b)
         except:
             board = []
+
+    def run():
+        b = makeBoard()
+        board = Queens(b)
+        return board.solve()
+
+    run()
