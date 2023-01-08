@@ -22,3 +22,12 @@ def test3():  # Tamanho errado
                  "00000010"])
 
     assert t3.solve() == -1
+
+
+def test4():  # 2 damas na mesma coluna
+    t4 = Queens(["10000000", "10000000",
+                 "00100000", "01000000",
+                 "00000001", "00000010",
+                 "01000000", "00001000"])
+
+    assert t4.solve() == -1
