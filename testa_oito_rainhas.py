@@ -51,7 +51,7 @@ def test6():  # 2 damas na mesma diagonal direita
     assert t6.solve() == -1
 
 
-def test7():
+def test7():  # Caso correto
     t7 = Queens(["00010000", "00000100",
                  "00000001", "01000000",
                  "00000010", "10000000",

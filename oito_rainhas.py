@@ -2,23 +2,23 @@ class Queens:
     def __init__(self, board):
         self.board = board
 
-    def checkColumn(self):  # Checa se há mais de 1 dama por coluna
+    def checkColumn(self) -> bool:  # Checa se há mais de 1 dama por coluna
         for num in range(8):
             countQueens = 0
             for i in self.board:
                 if i[num] == "1":
                     countQueens += 1
             if countQueens > 1:
-                return -1
-        return 1
+                return False
+        return True
 
-    def checkRows(self):  # Checa se há mais de 1 dama por linha
+    def checkRows(self) -> bool:  # Checa se há mais de 1 dama por linha
         for i in self.board:
             if i.count("1") > 1:
-                return -1
-        return 1
+                return False
+        return True
 
-    def checkDiagRight(self):
+    def checkDiagRight(self) -> bool:
         diags = []
         for row in range(8):
             for col in range(8):
@@ -26,11 +26,11 @@ class Queens:
                 if p == "1":
                     diags.append((row - col, p))
         if len(diags) == len(set(diags)):
-            return 1
+            return True
         else:
-            return -1
+            return False
 
-    def checkDiagLeft(self):
+    def checkDiagLeft(self) -> bool:
         diags = []
         for row in range(8):
             for col in range(8):
@@ -38,20 +38,33 @@ class Queens:
                 if p == "1":
                     diags.append((row + col, p))
         if len(diags) == len(set(diags)):
+            return True
+        else:
+            return False
+
+    def checkAll(self) -> int:
+        if self.checkColumn() and self.checkRows() and self.checkDiagRight() and self.checkDiagLeft:
             return 1
         else:
             return -1
 
-    def solve(self):
+    def solve(self) -> int:
+        if self.board == []:
+            return -1
         countQueens = 0
         countSize = 0
-        # if self.board == []:
-        #     return -1
         for i in self.board:
             countQueens += i.count("1")
             countSize += 1
         if countQueens != 8 or countSize != 8:
             return -1
-        if self.checkColumn() == -1 or self.checkRows() == -1 or self.checkDiagRight() == -1:
-            return -1
-        return 1
+        return self.checkAll()
+
+    def makeBoard():
+        board = []
+        try:
+            for i in range(8):
+                i = input()
+                board.append(i)
+        except:
+            board = []
