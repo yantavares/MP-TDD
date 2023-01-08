@@ -46,7 +46,7 @@ class Queens:
         if self.checkColumn() and self.checkRows() and self.checkDiagRight() and self.checkDiagLeft:
             return 1
         else:
-            return -1
+            return 0
 
     def solve(self) -> int:
         if self.board == []:
@@ -68,6 +68,7 @@ if __name__ == '__main__':
             for i in range(8):
                 b = input()
                 board.append(b)
+            return board
         except:
             board = []
 
@@ -76,4 +77,4 @@ if __name__ == '__main__':
         board = Queens(b)
         return board.solve()
 
-    run()
+    print(run())

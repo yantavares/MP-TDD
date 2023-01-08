@@ -30,7 +30,7 @@ def test4():  # 2 damas na mesma coluna
                  "00000001", "00000010",
                  "01000000", "00001000"])
 
-    assert t4.solve() == -1
+    assert t4.solve() == 0
 
 
 def test5():  # 2 damas na mesma linha
@@ -39,7 +39,7 @@ def test5():  # 2 damas na mesma linha
                  "00100000", "00000010",
                  "00010000", "00000001"])
 
-    assert t5.solve() == -1
+    assert t5.solve() == 0
 
 
 def test6():  # 2 damas na mesma diagonal direita
@@ -48,7 +48,7 @@ def test6():  # 2 damas na mesma diagonal direita
                  "00010000", "00000010",
                  "00000100", "00100000"])
 
-    assert t6.solve() == -1
+    assert t6.solve() == 0
 
 
 def test7():  # Caso correto
@@ -65,4 +65,4 @@ def test8():  # 2 damas na mesma diagonal esquerda
                  "00010000", "00000010",
                  "00000100", "00100000"])
 
-    assert t8.solve() == -1
+    assert t8.solve() == 0
