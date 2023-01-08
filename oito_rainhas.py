@@ -5,8 +5,8 @@ class Queens:
     def solve(self):
         countQueens = 0
         countSize = 0
-        if self.board == []:
-            return -1
+        # if self.board == []:
+        #     return -1
         for i in self.board:
             countQueens += i.count("1")
             countSize += 1
