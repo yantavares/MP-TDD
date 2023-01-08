@@ -30,6 +30,18 @@ class Queens:
         else:
             return -1
 
+    def checkDiagLeft(self):
+        diags = []
+        for row in range(8):
+            for col in range(8):
+                p = self.board[row][col]
+                if p == "1":
+                    diags.append((row + col, p))
+        if len(diags) == len(set(diags)):
+            return 1
+        else:
+            return -1
+
     def solve(self):
         countQueens = 0
         countSize = 0
